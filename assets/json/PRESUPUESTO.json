@@ -1,0 +1,64 @@
+{
+   "CONCEJO DELIBERANTE": {
+      "Bienes de capital": 1.86,
+      "Bienes de consumo": 8.06,
+      "Gasto en personal": 78.24,
+      "Ser. no personales": 13.93,
+      "Transf. sociales": 0.11
+   },
+   "INTENDENCIA": {
+      "Bienes de capital": 1.06,
+      "Bienes de consumo": 3.20,
+      "Gasto en personal": 67.10,
+      "Ser. no personales": 28.65
+   },
+   "GOBIERNO": {
+      "Bienes de capital": 0.44,
+      "Bienes de consumo": 2.58,
+      "Gasto en personal": 64.43,
+      "Ser. no personales": 15.71,
+      "Trabajos Publicos": 4.91,
+      "Transf. sociales": 11.94
+   },
+   "PLANIFICACION": {
+      "Bienes de capital": 2.18,
+      "Bienes de consumo": 2.24,
+      "Gasto en personal": 29.79,
+      "Ser. no personales": 9.49,
+      "Prestamos": 0.03,
+      "Trabajos públicos": 56.28
+   },
+   "ESPACIOS PUBLICOS": {
+      "Bienes de capital": 1.25,
+      "Bienes de consumo": 12.04,
+      "Gasto en personal": 67.27,
+      "Ser. no personales": 119.44
+   },
+   "DESARROLLO SOCIAL": {
+      "Bienes de capital": 0.54,
+      "Bienes de consumo": 7.66,
+      "Gasto en personal": 51.06,
+      "Ser. no personales": 21.47,
+      "Transf. sociales": 19.02,
+      "Prestamos": 0.25
+   },
+   "ECONOMIA": {
+      "Bienes de capital": 1.13,
+      "Bienes de consumo": 3.48,
+      "Gasto en personal": 73.37,
+      "Ser. no personales": 9.21,
+      "Transf. sociales": 12.81,
+      "Prestamos": 0.00
+   },
+   "ORGANISMOS DESCENTRALIZADOS": {
+      "Bienes de capital": 7.76,
+      "Bienes de consumo": 23.93,
+      "Gasto en personal": 9.88,
+      "Ser. no personales": 6.49
+   },
+   "NO PROGRAMATICO": {
+      "Ser. no personales": 162.86,
+      "Deuda Pública": 39.37,
+      "Programas especiales": 16.96
+   }
+}
