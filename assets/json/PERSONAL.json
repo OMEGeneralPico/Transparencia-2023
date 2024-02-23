@@ -4,8 +4,8 @@
 
   },
   "INTEDENCIA": {
-   "Asuntos legales": 9,
-   "Tecnol.de la inf.": 10,
+   "Asuntos legales": 0,
+   "Tecnol.de la inf.": 0,
     "Intendencia": 2,
    "Juzgado de faltas": 10,
    "Protocolo y ceremonial": 4
@@ -53,9 +53,9 @@
    
   },
   "ECONOMIA": {
-   "Contaduría": 18,
-   "Des.Econom.": 6,
-   "Control comerc.": 24,
+   "Contaduría": 1,
+   "Des.Econom.": 1,
+   "Control comerc.": 2,
    "Rentas": 28,
    "Eeconomía": 4,
    "Tesorería": 13

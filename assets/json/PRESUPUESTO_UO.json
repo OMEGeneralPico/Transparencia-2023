@@ -5,65 +5,65 @@
 
   },
   "INTEDENCIA": {
-   "Asuntos legales":  23030899,
-   "Comunicaciones": 18062379,
-   "Tecnol.de la inf.": 24966720,
-   "Articulación": 2758497,
-   "Intendencia": 18044479,
-   "Juzgado de faltas": 22076174,
-   "Protocolo y ceremonial": 8812382
+   "Asuntos legales":  72699279,
+   "Comunicaciones": 77967824,
+   "Tecnol.de la inf.": 89379824,
+   "Articulación": 17981259,
+   "Intendencia": 61895405,
+   "Juzgado de faltas": 100031783,
+   "Protocolo y ceremonial": 31594984
 
    
   },
   "GOBIERNO": {
-   "Educac.y cultura": 48307612,
-   "Choferes": 22439759,
-   "Gobierno seg.educ.y cultura": 39251316,
-   "Prevención": 102029123,
-   "RRHH": 35139628,
-   "Rel. institucionales": 59762986,
-   "Turismo": 8668494
+   "Educac.y cultura": 316435885,
+   "Choferes": 114273720,
+   "Gobierno seg.educ.y cultura": 126427516,
+   "Prevención": 484310516,
+   "RRHH": 156357477,
+   "Rel. institucionales": 168263951,
+   "Turismo": 44976483,
+   "Cabildo XXI": 35459101
 
    
   },
   "PLANIFICACION": {
-   "Diseño y planific.": 5190806,
-   "Infraestructura": 100906355,
-   "Obras particulares": 21574359,
-   "Planeam.y catastro": 6292061,
-   "Planif.y gestión urbana": 81397203,
-   "Planeam. y catastro" : 6292061
+   "Diseño y planific.": 20738527,
+   "Obras Municipales": 520406554 ,
+   "Obras particulares": 198464961,
+   "Planeam.y catastro": 27931942,
+   "Planif.y gestión urbana":183724638,
+   "Planeam. y catastro" : 27931942
    
    
   },
   "ESPACIOS PUBLICOS": {
-   "Ambiente y des.sustentable": 7482593,
-   "Espacios públicos": 80701000,
-   "Gestión ambiental": 20222947,
-   "R.R.U": 26756896,
-   "Sec.de amb. y serv.pub.": 142236591,
-   "Servicios públicos": 301552039,
-   "Zoonosis y vectores": 21875580
+   "Ambiente y des.sustentable": 32143293,
+   "Gestión ambiental": 85227318,
+   "R.R.U": 79634376,
+   "Sec.de amb. y serv.pub.": 599551461,
+   "Servicios públicos": 1321272785,
+   "Zoonosis y vectores": 69844792
   },
   "DESARROLLO SOCIAL": {
-   "Ctos. des. infantil": 50474870,
-   "Deportes": 28280406,
-   "Dir.de familia": 53253795,
-   "Dirección de juventud": 10177745,
-   "Nuevas economías": 18660094,
-   "Políticas de género": 7415311,
-   "Desarrollo social": 84281737,
-   "Servicio soc.de base": 55949677,
-   "Unidad de niñez":17328285
+   "Ctos. des. infantil": 209620972,
+   "Deportes": 134956143,
+   "Dir.de familia": 213003276,
+   "Dirección de juventud": 70489014,
+   "Nuevas economías": 127004123,
+   "Políticas de género": 18664496,
+   "Desarrollo social": 368939504,
+   "Servicio soc.de base": 222621962,
+   "Unidad de niñez":63884093
    
   },
   "ECONOMIA": {
-   "Contaduría": 27927376,
-   "Des.Econom.": 34752758,
-   "Control comerc.": 35118314,
-   "Rentas": 36164761,
-   "Eeconomía": 9035542,
-   "Tesorería": 23871523
+   "Contaduría": 140778551,
+   "Des.Econom.": 76126237,
+   "Control comerc.": 175502952,
+   "Rentas": 157782167,
+   "Economía": 54526148,
+   "Tesorería": 136889381
    
   },
   "ORGANISMOS DESCENTRALIZADOS": {

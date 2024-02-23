@@ -34,12 +34,12 @@ function animarpresupuestosecre() {
                 type: 'doughnut',
                 data: {
 
-                    labels: ['C.Deliberante', 'Intendencia', 'Gobierno', 'Planif. Urbana', 'Ambiente', 'Desarrollo Social', 'Economia', 'Org. Descentralizados', 'No programaticos'],
+                    labels: ['C.Deliberante', 'Intendencia', 'Gobierno', 'Planif. Urbana', 'Ambiente', 'Desarrollo Social', 'Economia', 'Asfalto y Caminos', 'No programaticos'],
                     datasets: [
                         {
                             tension: 0.1,
                             fill: false,
-                            data: [2.37, 2.59, 7.15, 4.85, 13.23, 7.17, 3.67, 3.63, 1.65],
+                            data: [5.19,5.28,16.91,11.48,28.33,16.71,8.67,5.09,2.35],
                             fill: true,
                             backgroundColor: ['rgba(71, 123, 168, 0.2)',
                                 'rgba(105, 190, 190, 0.2)',
@@ -88,7 +88,7 @@ function animarpresupuestosecre() {
 
                         title: {
                             display: true,
-                            text: 'Presupuesto ejecutado 2022 (%)',
+                            text: 'Presupuesto ejecutado 2023 (%)',
                             align: 'center',
                             font: {
                                 family: 'Titillium Web',
@@ -148,7 +148,7 @@ function animarrecursossecre() {
                         {
                             tension: 0.1,
                             fill: false,
-                            data: [1001.13, 952.63, 10.45, 58.26],
+                            data: [1708.47, 2168.28, 19.65, 0],
                             fill: true,
                             backgroundColor: [
                                 'rgba(71, 123, 168, 0.2)',
@@ -237,7 +237,7 @@ function animarpersonalsecre() {
                         {
                             tension: 0.1,
                             fill: false,
-                            data: [38, 33, 172, 46, 275, 168, 93, 20],
+                            data: [37,35,174,47,265,199,90,23],
                             fill: true,
                             backgroundColor: ['rgba(71, 123, 168, 0.2)',
                                 'rgba(105, 190, 190, 0.2)',
@@ -334,7 +334,7 @@ var inViewayudas = false;
 
 function animarAyuda() {
     for (var i = 0; i < 1; i++) {
-        var idElement = "ayudaseconomicas";
+        var idElement = "intervencionViolencia";
         if (isScrolledIntoView('#' + idElement)) {
             if (chartsayudas[idElement]) { continue }
             chartsayudas[idElement] = true;
@@ -344,106 +344,69 @@ function animarAyuda() {
             if (inViewayudas) { return; }
             inViewayudas = true;
             return myChart = new Chart(ctx, {
-                type: 'bar',
+                type: 'doughnut',
                 data: {
+                   
                     /* labels: ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'], */
-                    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                    labels: ['Reincidencia de Casos', 'Derivacion de Instituciones Comunidad', 'Fiscalias de Genero y O.A.V.y.T', 'Demandas Espontaneas', 'Defensoria Civil y Casos de Familia',"Unidad Local y derivacion interna Desarrollo Social"],
                     datasets: [
                         {
-                            label: 'Alquiler',
-                            tension: 0.2,
+                            label: 'Niños y niñas',
+                            tension: 0.1,
                             fill: false,
 
-                            data: [475000, 374500, 454000, 710500, 702000, 816000],
+                            data: [23,4,13,3,110,10],
                             borderColor: [
 
                                 'rgba(105, 190, 190, 1)'
                             ],
-                            backgroundColor: [
-
-                                'rgba(105, 190, 190, 0.2)'
-                            ],
+                            backgroundColor: ['rgba(71, 123, 168, 0.2)', 'rgba(105, 190, 190, 0.2)', 'rgba(215, 90, 218, 0.2)'],
                             borderWidth: 1
                         },
-                        {
-                            label: 'Enfermedad',
-                            tension: 0.2,
-                            fill: false,
-
-                            data: [76000, 64500, 85000, 112000, 201500, 164500],
-                            borderColor: [
-
-                                'rgba(71, 123, 168, 1)'
-                            ],
-                            backgroundColor: [
-
-                                'rgba(71, 123, 168, 0.2)'
-                            ],
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Hogar',
-                            tension: 0.2,
-                            fill: false,
-                            borderWidth: 1,
-                            data: [655600, 562200, 557300, 1881890, 1897600, 2017000],
-                            borderColor: [
-
-                                'rgba(215, 90, 218, 1)'
-                            ],
-                            backgroundColor: [
-
-                                'rgba(35, 145, 200, 0.2)'
-                            ],
-                        },
+                     
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            ticks: {
-                                font: { family: 'Raleway' }
-                            },
-                            stacked: true
+                    plugins: {
+                     
+                     
+                        datalabels: {
+                          display: 'auto',
+                          formatter: function (value) {
+                            return  Math.round((value*10))/10 + '%';
+                          },
+                          color: 'black',
+                          font: {
+                             
+                           
+                            family: 'Raleway'
+                          }
                         },
-                        y: {
-                            ticks: {
-                                font: { family: 'Raleway' },
-                                maxTicksLimit: 5,
-                            },
-                            stacked: true,
-                            font: {
-                                family: 'Titillium Web'
-                            },
-                        }
-                    },
-                    legend: {
+                      
+                      title: {
+                        display: true,
+                        text: 'Casos Enero-Junio 2023',
+              
+                        align: 'start',
+                        font: {
+                          family: 'Titillium Web',
+                          size: 20,
+                        },
+                        padding: {
+                          top: 10,
+                          bottom: 30,
+                        },
+                      },
+                      legend: {
                         display: true,
                         position: 'right',
                         align: 'middle',
-                        labels: { font: { family: 'Raleway' } },
-                    },
-                    plugins: {
-                        legend: {
-                            labels: {
-                                font: {
-                                    family: 'Raleway'
-                                }
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: 'Subsidios a personas por concepto ($)',
-                            align: 'start',
-                            font: {
-                                family: 'Titillium Web',
-                                size: 20,
-                            },
-                        }
+                        labels: { font: { family: 'Raleway' } }
+                      }
                     }
-                }
+                  }
             });
 
         } else {
@@ -469,6 +432,101 @@ $(window).load(function () {
 
 
 
+var chartsInfantes = {}
+var inViewInfantes = false;
+
+
+
+
+
+
+function animarInfantes() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "infanciatotal";
+      
+       
+        if (isScrolledIntoView('#' + idElement)) {
+            console.log(idElement);
+            if (chartsInfantes[idElement]) { continue }
+            chartsInfantes[idElement] = true;
+
+            var ctx = document.getElementById(idElement);
+          
+            if (inViewInfantes) { return; }
+            inViewInfantes = true;
+         
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+
+                    labels: ['Arco Iris', 'Frutillitas', 'Burbujitas', 'Mi Infancia','Rebeca'],
+                    datasets: [
+                        {
+                            data: [64,55,58,78,102],
+                            borderColor: [
+
+                                'rgba(105, 190, 190, 1)',
+                                'rgba(71, 123, 168, 1)',
+                                'rgba(215, 90, 218, 1)',
+                                'rgba(240, 150, 145, 1)',
+                                'rgba(35, 145, 200, 1)',
+                            ],
+                            backgroundColor: [
+
+                                'rgba(105, 190, 190, 0.2)',
+                                'rgba(71, 123, 168, 0.2',
+                                'rgba(215, 90, 218, 0.2)',
+                                'rgba(240, 150, 145, 0.2)',
+                                'rgba(35, 145, 200, 0.2)',
+
+                            ],
+                            borderWidth: 1
+                        },
+
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { font: { family: 'Raleway' } } },
+                        x: { ticks: { font: { family: 'Raleway' } } }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '',
+                            align: 'start',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            },
+                        },
+                        legend: {
+                            display: false
+                        },
+                    }
+                }
+            });
+        } else {
+            inViewInfantes = false;
+        }
+    }
+}
+
+$(window).scroll(function () {
+
+    animarInfantes();
+
+});
+
+$(window).load(function () {
+
+
+    animarInfantes();
+
+});
+
 
 
 var chartsAmbiente = {}
@@ -493,10 +551,10 @@ function animarAmbiente() {
                 type: 'bar',
                 data: {
 
-                    labels: ['Carton y Papeles', 'Plastico', 'Vidrio', 'Metales', 'Chatarra'],
+                    labels: ['Quirofano Movil', 'Refugio Canino', 'Colegio Veterinario'],
                     datasets: [
                         {
-                            data: [36240, 12626, 67498, 1382, 11620],
+                            data: [366, 376, 1332],
                             borderColor: [
 
                                 'rgba(105, 190, 190, 1)',
@@ -547,7 +605,7 @@ function animarAmbiente() {
                         legend: false,
                         title: {
                             display: true,
-                            text: 'Material recuperado (kgs.)',
+                            text: 'Castraciones Realizadas',
                             align: 'start',
                             font: {
                                 family: 'Titillium Web',
@@ -600,26 +658,13 @@ function animarGobierno() {
                     datasets: [
 
                         {
-                            label: 'Radar',
-                            data: [124, 62, 52, 124, 65, 110],
+                           
+                            data: [11826, 28471, 31477, 38033, 15734, 792],
                             backgroundColor: 'rgba(71, 123, 168, 0.2)',
                             borderColor:'rgba(71, 123, 168, 1)',
                             borderWidth: 1
                         },
-                        {
-                            label: 'Domo',
-                            data: [5, 0, 31, 0, 0, 0],
-                            backgroundColor: 'rgba(105, 190, 190, 0.2)',
-                            borderColor:'rgba(105, 190, 190, 1)',
-                            borderWidth: 1
-                        },
-                        {
-                            label: 'Fotomultas',
-                            data: [349, 385, 312, 393, 231, 315],
-                            backgroundColor: 'rgba(215, 90, 218, 0.2)',
-                            borderColor: 'rgba(215, 90, 218, 1)',
-                            borderWidth: 1
-                        },
+                      
                         
 
                     ]
@@ -627,14 +672,14 @@ function animarGobierno() {
                 options: {
                     plugins: {
                         legend: {
-                            display: true,
+                            display: false,
                             position: 'top',
                             align: 'middle',
                             labels: { font: { family: 'Raleway' } }
                         },
                         title: {
                             display: true,
-                            text: 'Infracciones labradas por medio',
+                            text: 'Chequeos realizados',
                             align: 'start',
                             font: {
                                 family: 'Titillium Web',
@@ -683,8 +728,281 @@ $(window).load(function () {
 
 });
 
+var chartsGobiernove = {}
+var InViewGobiernove = false;
+
+function animarGobiernoVehiculo() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "inspeccionesGobiernoVe";
+        if (isScrolledIntoView('#' + idElement)) {
+            if (chartsGobierno[idElement]) { continue }
+            chartsGobierno[idElement] = true;
+
+            var ctx = document.getElementById(idElement);
+
+            if (InViewGobierno) { return; }
+            InViewGobierno = true;
+
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre ', 'Diciembre'],
+                    datasets: [
+
+                        {
+                           
+                            data: [16629, 18309, 19081, 17954, 17467, 9414],
+                            backgroundColor: 'rgba(71, 123, 168, 0.2)',
+                            borderColor:'rgba(71, 123, 168, 1)',
+                            borderWidth: 1
+                        },
+                      
+                        
+
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                            position: 'top',
+                            align: 'middle',
+                            labels: { font: { family: 'Raleway' } }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Chequeos realizados',
+                            align: 'start',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            ticks: {
+                                font: { family: 'Raleway' }
+                            },
+                            stacked: true
+                        },
+                        y: {
+                            ticks: {
+                                font: { family: 'Raleway' },
+                                maxTicksLimit: 5,
+                            },
+                            stacked: true,
+                            font: {
+                                family: 'Titillium Web'
+                            },
+                        }
+                    }
+                }
+            });
+        } else {
+            InViewGobierno = false;
+        }
+    }
+}
+
+$(window).scroll(function () {
+
+    animarGobiernoVehiculo();
+
+});
+
+$(window).load(function () {
 
 
+    animarGobiernoVehiculo();
+
+});
+
+
+var chartsGobiernoex = {}
+var InViewGobiernoex = false;
+
+function animarGobiernoExcentos() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "inspeccionesGobiernoEx";
+        if (isScrolledIntoView('#' + idElement)) {
+            if (chartsGobiernoex[idElement]) { continue }
+            chartsGobiernoex[idElement] = true;
+
+            var ctx = document.getElementById(idElement);
+
+            if (InViewGobiernoex) { return; }
+            InViewGobiernoex = true;
+
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Frentistas', 'Periodistas', 'Discapacidad', 'Veteranos de Guerra'],
+                    datasets: [
+
+                        {
+                           
+                            data: [137, 66, 158, 14],
+                            backgroundColor: 'rgba(63,248,43, 0.2)',
+                            borderColor:'rgba(63,248,43, 1)',
+                            borderWidth: 1
+                        },
+                      
+                        
+
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                            position: 'top',
+                            align: 'middle',
+                            labels: { font: { family: 'Raleway' } }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Dominios Excentos',
+                            align: 'start',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            ticks: {
+                                font: { family: 'Raleway' }
+                            },
+                            stacked: true
+                        },
+                        y: {
+                            ticks: {
+                                font: { family: 'Raleway' },
+                                maxTicksLimit: 5,
+                            },
+                            stacked: true,
+                            font: {
+                                family: 'Titillium Web'
+                            },
+                        }
+                    }
+                }
+            });
+        } else {
+            InViewGobiernoex = false;
+        }
+    }
+}
+
+$(window).scroll(function () {
+
+    animarGobiernoExcentos();
+
+});
+
+$(window).load(function () {
+
+
+    animarGobiernoExcentos();
+
+});
+var chartsGobiernoinf = {}
+var InViewGobiernoinf = false;
+
+function animarGobiernoInfracciones() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "inspeccionesGobiernoInf";
+        if (isScrolledIntoView('#' + idElement)) {
+            if (chartsGobiernoinf[idElement]) { continue }
+            chartsGobiernoinf[idElement] = true;
+
+            var ctx = document.getElementById(idElement);
+
+            if (InViewGobiernoinf) { return; }
+            InViewGobiernoinf = true;
+
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Julio', 'Agosto', 'Septiembre', 'Octubre','Noviembre','Diciembre'],
+                    datasets: [
+
+                        {
+                           
+                            data: [1286, 1140, 1049, 984,943,450],
+                            backgroundColor: 'rgba(191,44,33, 0.2)',
+                            borderColor:'rgba(191,44,33, 1)',
+                            borderWidth: 1
+                        },
+                      
+                        
+
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                            position: 'top',
+                            align: 'middle',
+                            labels: { font: { family: 'Raleway' } }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Infracciones Realizadas',
+                            align: 'start',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            ticks: {
+                                font: { family: 'Raleway' }
+                            },
+                            stacked: true
+                        },
+                        y: {
+                            ticks: {
+                                font: { family: 'Raleway' },
+                                maxTicksLimit: 5,
+                            },
+                            stacked: true,
+                            font: {
+                                family: 'Titillium Web'
+                            },
+                        }
+                    }
+                }
+            });
+        } else {
+            InViewGobiernoinf = false;
+        }
+    }
+}
+
+$(window).scroll(function () {
+
+    animarGobiernoInfracciones();
+
+});
+
+$(window).load(function () {
+
+
+    animarGobiernoInfracciones();
+
+});
 
 var chartsIntendencia = {}
 var InViewIntendencia = false;
@@ -709,7 +1027,7 @@ function animarIntendencia() {
                     datasets: [
 
                         {
-                            data: [3035, 122, 52, 57],
+                            data: [3514, 83 , 50 , 51 ],
                             backgroundColor: [
                                 'rgba(71, 123, 168, 0.2)',
                                 'rgba(105, 190, 190, 0.2)',
@@ -789,7 +1107,7 @@ $(window).load(function () {
 
 var chartscordones = {}
 var inViewcordones = false;
-
+var inViewcordones2 = false;
 function animarcordones() {
     for (var i = 0; i < 1; i++) {
         var idElement = "cordones";
@@ -805,10 +1123,10 @@ function animarcordones() {
                 type: 'bar',
                 data: {
 
-                    labels: ['Corpico', 'Velonet', 'Telecom', 'Telefonica'],
+                    labels: ['OBRA NUEVA', 'AMPLIACIÓN', 'OBRA Y RELEVAMIENTO', 'TOTAL '],
                     datasets: [
                         {
-                            data: [259, 120, 128, 134],
+                            data: [6420.12, 3918.75, 20345.12, 30683.99],
                             borderColor: [
 
                                 'rgba(105, 190, 190, 1)',
@@ -841,7 +1159,7 @@ function animarcordones() {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Inspecciones de obra (cant. notificaciones)',
+                            text: 'DISCRIMINACIÓN SEGÚN USOS DE LA CANTIDAD DE METROS CUADRADOS APROBADOS',
                             align: 'start',
                             font: {
                                 family: 'Titillium Web',
@@ -872,6 +1190,89 @@ $(window).load(function () {
 
 });
 
+
+function animarcordones2() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "cordones2";
+        if (isScrolledIntoView('#' + idElement)) {
+            if (chartscordones[idElement]) { continue }
+            chartscordones[idElement] = true;
+
+            var ctx = document.getElementById(idElement);
+
+            if (inViewcordones2) { return; }
+            inViewcordones2 = true;
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+
+                    labels: ['Bacheos Ciudad', 'Vendidos a terceros', 'TOTAL '],
+                    datasets: [
+                        {
+                            data: [84, 349, 433],
+                            borderColor: [
+
+                                'rgba(105, 190, 190, 1)',
+                                'rgba(71, 123, 168, 1)',
+                                'rgba(215, 90, 218, 1)',
+                                'rgba(240, 150, 145, 1)',
+                                'rgba(35, 145, 200, 1)',
+                            ],
+                            backgroundColor: [
+
+                                'rgba(105, 190, 190, 0.2)',
+                                'rgba(71, 123, 168, 0.2',
+                                'rgba(215, 90, 218, 0.2)',
+                                'rgba(240, 150, 145, 0.2)',
+                                'rgba(35, 145, 200, 0.2)',
+
+                            ],
+                            borderWidth: 1
+                        },
+
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { font: { family: 'Raleway' } } },
+                        x: { ticks: { font: { family: 'Raleway' } } }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Material de Bacheo (toneladas)',
+                            align: 'start',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            },
+                        },
+                        legend: {
+                            display: false
+                        },
+                    }
+                }
+            });
+        } else {
+            inViewayudas = false;
+        }
+    }
+}
+$(window).scroll(function () {
+
+    animarcordones2();
+
+});
+
+$(window).load(function () {
+
+
+    animarcordones2();
+
+});
+
 var chartseconomiacreditos = {}
 var inVieweconomiacreditos = false;
 
@@ -890,10 +1291,13 @@ function animareconomiacreditos() {
                 type: 'bar',
                 data: {
 
-                    labels: ['Linea Municipal', '2870'],
+                    labels: ['Linea Municipal', '2870','2461','Galpón PYM'],
                     datasets: [
                         {
-                            data: [2988770, 1600000],
+                            data: [13950000.00
+
+                                , 7200000.00,2900000.00, 1600000.00
+                            ],
                             borderColor: [
 
                                 'rgba(105, 190, 190, 1)',
@@ -929,7 +1333,7 @@ function animareconomiacreditos() {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Monto total créditos por fecha ($)',
+                            text: 'Monto total créditos por tipo ($)',
                             align: 'start',
                             font: {
                                 family: 'Titillium Web',
@@ -981,12 +1385,12 @@ function animarCreditosSector() {
                 type: 'bar',
                 data: {
 
-                    labels: ['Mujeres','Hombres','2870', 'Linea Municipal','Comercio', 'Produccion', 'Servicios'],
+                    labels: ['Comercio', 'Produccion', 'Servicios'],
                     datasets: [
                         {
                             tension: 0.1,
                             fill: false,
-                            data: [24, 19, 40, 3, 24, 7, 12],
+                            data: [26+4,4+2,8+1+3],
                             fill: true,
                             borderColor: [
 
@@ -1052,7 +1456,96 @@ $(window).load(function () {
     animarCreditosSector();
 
 });
+var chartscreditosPorcentaje = {}
+var inViewcreditosPorcentaje = false;
 
+function animarCreditosPorcen() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "creditosPorcentaje";
+        if (isScrolledIntoView('#' + idElement)) {
+            if (chartscreditosPorcentaje[idElement]) { continue }
+            chartscreditosPorcentaje[idElement] = true;
+
+            var ctx = document.getElementById(idElement);
+
+            if (inViewcreditosPorcentaje) { return; }
+            inViewcreditosPorcentaje = true;
+            return new Chart(ctx, {
+                plugins: [ChartDataLabels],
+                type: 'doughnut',
+                data: {
+
+                    labels: ['Hombres', 'Mujeres'],
+                    datasets: [
+                        {
+                            tension: 0.1,
+                            fill: false,
+                            data: [20+7+1,14+2+3],
+                            fill: true,
+                            borderColor: [
+
+                                'rgba(105, 190, 190, 1)',
+                                'rgba(71, 123, 168, 1)',
+                                'rgba(215, 90, 218, 1)',
+                                'rgba(240, 150, 145, 1)',
+                                'rgba(35, 145, 200, 1)',
+                            ],
+                            backgroundColor: [
+
+                                'rgba(105, 190, 190, 0.2)',
+                                'rgba(71, 123, 168, 0.2)',
+                                'rgba(215, 90, 218, 0.2)',
+                                'rgba(240, 150, 145, 0.2)',
+                                'rgba(35, 145, 200, 0.2)',
+
+                            ],
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { ticks: { font: { family: 'Raleway' } } },
+                        x: { ticks: { font: { family: 'Raleway' } } }
+                    },
+                    legend: {
+                        display: false
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Porcentaje total créditos por Genero',
+                            align: 'start',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            },
+                        },
+                        legend: {
+                            display: true
+                        },
+                    }
+                }
+            });
+        } else {
+            inViewcreditosPorcentaje = false;
+        }
+    }
+}
+$(window).scroll(function () {
+
+    animarCreditosPorcen();
+
+});
+
+$(window).load(function () {
+
+
+    animarCreditosPorcen();
+
+});
 
 var chartambientezoo = {}
 var inViewambientezoo = false;
@@ -1072,10 +1565,10 @@ function animarambientezoo() {
                 type: 'bar',
                 data: {
 
-                    labels: ['Castraciones ', 'Vacunaciones ', 'Desinfecciónes '],
+                    labels: ['Enero ', 'Febrero ', 'Marzo ','Abril', 'Mayo', 'Junio'],
                     datasets: [
                         {
-                            data: [1436, 3755, 62],
+                            data: [533, 400, 420,697,468,400],
                             borderColor: [
 
                                 'rgba(105, 190, 190, 1)',
@@ -1111,7 +1604,7 @@ function animarambientezoo() {
                     plugins: {
                         title: {
                             display: true,
-                            text: 'Actividades de zoonosis',
+                            text: 'Cuadras que recibieron mantenimiento',
                             align: 'start',
                             font: {
                                 family: 'Titillium Web',
@@ -1146,6 +1639,7 @@ $(window).load(function () {
 
 var chartplanifobras = {}
 var inViewplanifobras = false;
+var inViewplanifobras2 = false;
 
 function animarplanifobras() {
     for (var i = 0; i < 1; i++) {
@@ -1162,12 +1656,12 @@ function animarplanifobras() {
                 type: 'bar',
                 data: {
 
-                    labels: ['Conexión de gas natural', 'Conexión de cloacas', 'Conexión de agua potable','Conexión  de fibra óptica Banco Macro'],
+                    labels: ["Obra nueva y ampliación","Estado de obras","Reclamos","Mejoras sin declarar","Usos de suelo","Renuncias y Asignaciones"," Planos escaneados","Obras en Infracción","Antecedentes solicitados","Residencias para ancianos"],
                     datasets: [
                         {
                             tension: 0.1,
                             fill: false,
-                            data: [135, 61, 41,1,],
+                            data: [215,278,7,331,334,20,423,8,453,21],
                             fill: true,
                             backgroundColor: ['rgba(71, 123, 168, 0.2)', 'rgba(105, 190, 190, 0.2)', 'rgba(215, 90, 218, 0.2)', 'rgba(210, 80, 218, 0.2)',
 
@@ -1204,7 +1698,7 @@ function animarplanifobras() {
 
                         title: {
                             display: true,
-                            text: 'Permisos de trabajo en via pública',
+                            text: 'Inspecciones realizadas',
                             align: 'center',
                             font: {
                                 family: 'Titillium Web',
@@ -1241,14 +1735,106 @@ $(window).load(function () {
 
 });
 
+function animarplanifobras2() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "planifobras2";
+        if (isScrolledIntoView('#' + idElement)) {
+            if (chartplanifobras[idElement]) { continue }
+            chartplanifobras[idElement] = true;
 
+            var ctx = document.getElementById(idElement);
+
+            if (inViewplanifobras2) { return; }
+            inViewplanifobras2 = true;
+            return new Chart(ctx, {
+                type: 'bar',
+                data: {
+
+                    labels: ["Obra nueva y ampliación","Estado de obras","Reclamos","Mejoras sin declarar","Usos de suelo","Renuncias y Asignaciones"," Planos escaneados","Obras en Infracción","Antecedentes solicitados","Residencias para ancianos"],
+                    datasets: [
+                        {
+                            tension: 0.1,
+                            fill: false,
+                            data: [215,278,7,331,334,20,423,8,453,21],
+                            fill: true,
+                            backgroundColor: ['rgba(71, 123, 168, 0.2)', 'rgba(105, 190, 190, 0.2)', 'rgba(215, 90, 218, 0.2)', 'rgba(210, 80, 218, 0.2)',
+
+
+
+                                'rgba(240, 150, 145, 0.2)',
+                                'rgba(35, 145, 200, 0.2)',
+                            ],
+
+
+                            borderWidth: 1,
+                            borderColor: [
+
+                                'rgba(71, 123, 168, 1)', 'rgba(105, 190, 190, 1)', 'rgba(215, 90, 218, 1)',
+
+
+
+                                'rgba(240, 150, 145, 1)',
+                                'rgba(35, 145, 200, 1)',
+                            ],
+
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: { ticks: { font: { family: 'Raleway' } } },
+                        x: { ticks: { font: { family: 'Raleway' } } }
+                    },
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+
+                        title: {
+                            display: true,
+                            text: 'Inspecciones realizadas',
+                            align: 'center',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            }
+                        },
+                        legend: {
+                            display: false,
+                            position: 'right',
+                            align: 'middle',
+                            labels: { font: { family: 'Raleway' } }
+                        },
+                    },
+
+
+
+                }
+            });
+        } else {
+            inViewppersonalsecre = false;
+        }
+    }
+}
+$(window).scroll(function () {
+
+    animarplanifobras2();
+
+});
+
+$(window).load(function () {
+
+
+    animarplanifobras2();
+
+});
 
 var chartmicro = {}
 var inviewmicro = false;
 
 function animarmicro() {
     for (var i = 0; i < 1; i++) {
-        var idElement = "desarrollomicro";
+        var idElement = "violenciaDesarrollo";
         if (isScrolledIntoView('#' + idElement)) {
             if (chartmicro[idElement]) { continue }
             chartmicro[idElement] = true;
@@ -1258,7 +1844,7 @@ function animarmicro() {
             if (inviewmicro) { return; }
             inviewmicro = true;
             return new Chart(ctx, {
-                type: 'bar',
+                type: 'doughnut',
                 data: {
 
                     labels: ['Entrevistas', 'Evaluaciones', 'Seguimiento'],
@@ -1338,7 +1924,102 @@ $(window).load(function () {
     animarmicro();
 
 });
+var chartCredit = {}
+var inviewCredit = false;
 
+function animarmCreditosDS() {
+    for (var i = 0; i < 1; i++) {
+        var idElement = "creditosdesarrollo";
+        if (isScrolledIntoView('#' + idElement)) {
+            if (chartCredit[idElement]) { continue }
+            chartCredit[idElement] = true;
+
+            var ctx = document.getElementById(idElement);
+
+            if (inviewCredit) { return; }
+            inviewCredit = true;
+            return new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+
+                    labels: ['Microcréditos', 'Créditos de recupero', 'Programa Banco de Materiales','Banco de insumos'],
+                    datasets: [
+                        {
+                            tension: 0.1,
+                            fill: false,
+                            data: [14967973.02
+                                , 1700000, 14981330.03,6500000],
+                            fill: true,
+                            backgroundColor: ['rgba(71, 123, 168, 0.2)', 'rgba(105, 190, 190, 0.2)', 'rgba(215, 90, 218, 0.2)',
+
+
+
+                                'rgba(240, 150, 145, 0.2)',
+                                'rgba(35, 145, 200, 0.2)',
+                            ],
+
+
+                            borderWidth: 1,
+                            borderColor: [
+                                'rgba(71, 123, 168, 1)', 'rgba(105, 190, 190, 1)', 'rgba(215, 90, 218, 1)',
+
+
+
+                                'rgba(240, 150, 145, 1)',
+                                'rgba(35, 145, 200, 1)',
+                            ],
+
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: { ticks: { font: { family: 'Raleway' } } },
+                        x: { ticks: { font: { family: 'Raleway' } } }
+                    },
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+
+                        title: {
+                            display: true,
+                            text: 'Actividades de microcréditos ($)',
+                            align: 'center',
+                            font: {
+                                family: 'Titillium Web',
+                                size: 20,
+                            }
+                        },
+                        legend: {
+                            display: false,
+                            position: 'right',
+                            align: 'middle',
+                            labels: { font: { family: 'Raleway' } }
+                        },
+                    },
+
+
+
+                }
+            });
+        } else {
+            inViewppersonalsecre = false;
+        }
+    }
+}
+$(window).scroll(function () {
+
+    animarmCreditosDS();
+
+});
+
+$(window).load(function () {
+
+
+    animarmCreditosDS();
+
+});
 var chartatraques = {}
 var InViewatraques = false;
 
@@ -1477,12 +2158,12 @@ function animaractcomercio() {
                 type: 'bar',
                 data: {
 
-                    labels: ['Bajas comerciales', 'Altas comerciales', 'Lib. Sanitarias nuevas', 'Renovaciones'],
+                    labels: ['Bajas comerciales', 'Altas comerciales'],
                     datasets: [
                         {
                             tension: 0.1,
                             fill: false,
-                            data: [46, 29, 354, 1018],
+                            data: [91, 113],
                             fill: true,
                             backgroundColor: ['rgba(71, 123, 168, 0.2)', 'rgba(105, 190, 190, 0.2)', 'rgba(105, 170, 180, 0.2)', 'rgba(215, 90, 218, 0.2)',
 

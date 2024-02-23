@@ -1,4 +1,4 @@
-function generarchartbarra(etiquetas, data2, ctx) {
+function generarchartbarra2(etiquetas, data2, ctx) {
   //Chart.defaults.global.defaultFontFamily = "'Titillium Web'"
   //Chart.defaults.global.defaultFontSize = 5
 
@@ -69,10 +69,10 @@ $.getJSON("assets/json/PRESUPUESTO_UO.json", function (dataorig) {
   personal = dataorig
 })
 
-function animarPersonal() {
+function animarPersonal2() {
     for (var i = 0; i < Object.keys(personal).length  - 1; i++) {
-    var idElement = "PresupuestoB" + i;
-    
+    var idElement = "PresupuestoV" + i;
+   
     if (isScrolledIntoView('#' + idElement)) {
       if (personalCharts[idElement]) { continue }
       personalCharts[idElement] = true;
@@ -91,13 +91,13 @@ function animarPersonal() {
 }
 $(window).scroll(function () {
 
-  animarPersonal();
+  animarPersonal2();
 
 });
 
 $(window).load(function () {
 
 
-  animarPersonal();
+  animarPersonal2();
 
 });
